@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:stipop_flutter_test/second_screen.dart';
 import 'package:stipop_sdk/stipop_plugin.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MaterialApp(home: MyApp()));
 }
 
 class MyApp extends StatefulWidget {
@@ -54,6 +55,15 @@ class _MyAppState extends State<MyApp> {
                 const TextField(
                   decoration: InputDecoration(
                     hintText: 'Sample TextField',
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => SecondScreen()));
+                    },
+                    child: const Text('Go to the other screen'),
                   ),
                 ),
                 Padding(
